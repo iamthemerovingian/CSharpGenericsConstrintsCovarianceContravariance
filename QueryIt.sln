@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.20617.1 PREVIEW
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QueryIt", "QueryIt\QueryIt.csproj", "{A3878839-EB07-4C67-AED8-6260C26A6AF9}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QueryItFinal", "QueryIt\QueryItFinal.csproj", "{A3878839-EB07-4C67-AED8-6260C26A6AF9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QueryItBefore", "QueryItBefore\QueryItBefore.csproj", "{4E1AB036-1A7D-4743-93A1-78444B97E8F9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{A3878839-EB07-4C67-AED8-6260C26A6AF9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A3878839-EB07-4C67-AED8-6260C26A6AF9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A3878839-EB07-4C67-AED8-6260C26A6AF9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4E1AB036-1A7D-4743-93A1-78444B97E8F9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4E1AB036-1A7D-4743-93A1-78444B97E8F9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4E1AB036-1A7D-4743-93A1-78444B97E8F9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4E1AB036-1A7D-4743-93A1-78444B97E8F9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
