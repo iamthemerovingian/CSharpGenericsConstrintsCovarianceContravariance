@@ -12,12 +12,15 @@ namespace QueryItBefore
         public DbSet<Employee> Employees { get; set; }
     }
 
-    public interface IRepository<T> : IDisposable
+    public interface IReadOnlyRepository<out T> : IDisposable
+    {
+        T FindbyId(int id);
+        IQueryable<T> FindAll();
+    }
+    public interface IRepository<T> : IDisposable, IReadOnlyRepository<T>
     {
         void Add(T newEntitiy);
         void Delete(T entity);
-        T FindbyId(int id);
-        IQueryable<T> FindAll();
         int Commit();
     }
 
