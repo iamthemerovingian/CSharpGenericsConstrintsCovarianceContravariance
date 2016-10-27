@@ -16,10 +16,17 @@ namespace QueryItBefore
             using (IRepository<Employee> employeeRepository = new SqlRepository<Employee>(new EmployeeDb()))
             {
                 AddEmployees(employeeRepository);
+                AddManagers(employeeRepository);
                 CountEmployees(employeeRepository);
                 QueryEmployees(employeeRepository);
                 DumpPeople(employeeRepository);
             }
+        }
+
+        private static void AddManagers(IIWriteOnlyRepository<Manager> employeeRepository)
+        {
+            employeeRepository.Add(new Manager { Name = "Alex" });
+            employeeRepository.Commit();
         }
 
         private static void DumpPeople(IReadOnlyRepository<Person> employeeRepository)

@@ -17,11 +17,16 @@ namespace QueryItBefore
         T FindbyId(int id);
         IQueryable<T> FindAll();
     }
-    public interface IRepository<T> : IDisposable, IReadOnlyRepository<T>
+
+    public interface IIWriteOnlyRepository<in T> : IDisposable
     {
         void Add(T newEntitiy);
         void Delete(T entity);
         int Commit();
+    }
+    public interface IRepository<T> : IDisposable, IReadOnlyRepository<T>, IIWriteOnlyRepository<T>
+    {
+
     }
 
     public class SqlRepository<T> : IRepository<T> where T : class, IEntity//where T class is a generic constraint!!! you can also force T to be Struct. If the new() is there the type T must have a default constructor.
