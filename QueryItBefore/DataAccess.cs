@@ -21,7 +21,7 @@ namespace QueryItBefore
         int Commit();
     }
 
-    public class SqlRepository<T> : IRepository<T> where T : class //where T class is a generic constraint!!!
+    public class SqlRepository<T> : IRepository<T> where T : class, IEntity//where T class is a generic constraint!!!
     {
         DbContext _ctx;
         DbSet<T> _set;
@@ -32,7 +32,10 @@ namespace QueryItBefore
         }
         public void Add(T newEntitiy)
         {
-            _set.Add(newEntitiy);
+            if (newEntitiy.IsValid())
+            {
+                _set.Add(newEntitiy);
+            }
         }
 
         public int Commit()
