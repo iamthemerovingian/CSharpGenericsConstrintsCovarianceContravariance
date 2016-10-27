@@ -21,7 +21,7 @@ namespace QueryItBefore
         int Commit();
     }
 
-    public class SqlRepository<T> : IRepository<T> where T : class, IEntity//where T class is a generic constraint!!!
+    public class SqlRepository<T> : IRepository<T> where T : class, IEntity//where T class is a generic constraint!!! you can also force T to be Struct. If the new() is there the type T must have a default constructor.
     {
         DbContext _ctx;
         DbSet<T> _set;
@@ -45,7 +45,7 @@ namespace QueryItBefore
 
         public void Delete(T entity)
         {
-            throw new NotImplementedException();
+            _set.Remove(entity);
         }
 
         public void Dispose()
@@ -60,7 +60,7 @@ namespace QueryItBefore
 
         public T FindbyId(int id)
         {
-            throw new NotImplementedException();
+            return _set.Find(id);
         }
     }
 }
